@@ -12,6 +12,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="24dp"
         android:text="Summary"
+        android:layout_marginTop="30dp"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
