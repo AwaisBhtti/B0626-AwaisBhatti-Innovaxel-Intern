@@ -100,7 +100,7 @@ public class LoginFragment extends Fragment {
                 
                 // All active users redirect to MainActivity
                 if (getActivity() != null) {
-                    startActivity(new Intent(getActivity(), MainActivity.class));
+                    startActivity(new Intent(getActivity(), HomeActivity.class));
                     getActivity().finish();
                 }
             }

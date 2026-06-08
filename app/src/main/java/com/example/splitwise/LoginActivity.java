@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Firebase Auto-login check
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, HomeActivity.class));
             finish();
             return;
         }
