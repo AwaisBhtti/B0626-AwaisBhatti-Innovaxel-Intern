@@ -29,12 +29,10 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilTitle"
-                style="@style/Widget.Splitwise.TextInputLayout.OutlinedBox"
+                style="@style/Widget.Splitwise.TextInputLayout.OutlinedBox.DarkBackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Title"
-                app:boxStrokeColor="@color/white"
-                app:hintTextColor="@color/white">
+                android:hint="Title">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etTitle"
@@ -46,14 +44,12 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilAmount"
-                style="@style/Widget.Splitwise.TextInputLayout.OutlinedBox"
+                style="@style/Widget.Splitwise.TextInputLayout.OutlinedBox.DarkBackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tilTitle"
                 android:layout_marginTop="16dp"
-                android:hint="Amount"
-                app:boxStrokeColor="@color/white"
-                app:hintTextColor="@color/white">
+                android:hint="Amount">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etAmount"
@@ -83,14 +79,12 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilDate"
-                style="@style/Widget.Splitwise.TextInputLayout.OutlinedBox"
+                style="@style/Widget.Splitwise.TextInputLayout.OutlinedBox.DarkBackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/spinnerCategory"
                 android:layout_marginTop="16dp"
-                android:hint="Date"
-                app:boxStrokeColor="@color/white"
-                app:hintTextColor="@color/white">
+                android:hint="Date">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etDate"
@@ -103,14 +97,12 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilNotes"
-                style="@style/Widget.Splitwise.TextInputLayout.OutlinedBox"
+                style="@style/Widget.Splitwise.TextInputLayout.OutlinedBox.DarkBackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tilDate"
                 android:layout_marginTop="16dp"
-                android:hint="Notes (Optional)"
-                app:boxStrokeColor="@color/white"
-                app:hintTextColor="@color/white">
+                android:hint="Notes (Optional)">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etNotes"
