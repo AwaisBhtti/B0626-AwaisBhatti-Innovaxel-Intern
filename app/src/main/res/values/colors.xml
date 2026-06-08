@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#A0A0A0</color>
+    <color name="darkGrey">#1A1A1A</color>
+    <color name="profile_background">#F0F7F5</color>
+    <color name="profile_primary_button">#2D9B8A</color>
+    <color name="profile_danger_button">#E8845A</color>
+    <color name="avatar_accent">#E8845A</color>
+</resources>
