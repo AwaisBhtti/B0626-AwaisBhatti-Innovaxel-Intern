@@ -3,14 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="Manage Expenses"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvEditExpenses"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false" />
+
 </LinearLayout>

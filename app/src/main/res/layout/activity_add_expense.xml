@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
+    android:orientation="vertical"
     android:padding="24dp">
 
     <TextView
         android:id="@+id/txtPageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
         android:layout_marginBottom="24dp"
         android:text="Add Expense"
         android:textColor="@color/white"
@@ -19,13 +20,14 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/btnSaveExpense"
-        android:layout_below="@id/txtPageTitle">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilTitle"
@@ -47,7 +49,6 @@
                 style="@style/Widget.Splitwise.TextInputLayout.OutlinedBox.DarkBackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tilTitle"
                 android:layout_marginTop="16dp"
                 android:hint="Amount">
 
@@ -63,7 +64,6 @@
                 android:id="@+id/lblCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tilAmount"
                 android:layout_marginTop="16dp"
                 android:text="Category"
                 android:textColor="@color/white" />
@@ -72,7 +72,6 @@
                 android:id="@+id/spinnerCategory"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_below="@id/lblCategory"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_toggle_container"
                 android:padding="8dp" />
@@ -82,7 +81,6 @@
                 style="@style/Widget.Splitwise.TextInputLayout.OutlinedBox.DarkBackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/spinnerCategory"
                 android:layout_marginTop="16dp"
                 android:hint="Date">
 
@@ -100,7 +98,6 @@
                 style="@style/Widget.Splitwise.TextInputLayout.OutlinedBox.DarkBackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tilDate"
                 android:layout_marginTop="16dp"
                 android:hint="Notes (Optional)">
 
@@ -113,17 +110,17 @@
                     android:textColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
 
-        </RelativeLayout>
+        </LinearLayout>
     </ScrollView>
 
     <Button
         android:id="@+id/btnSaveExpense"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/profile_primary_button"
         android:text="Save Expense"
         android:textColor="@color/white"
         app:cornerRadius="12dp" />
 
-</RelativeLayout>
+</LinearLayout>

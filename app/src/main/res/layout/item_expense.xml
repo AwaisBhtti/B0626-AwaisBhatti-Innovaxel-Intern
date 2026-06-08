@@ -9,50 +9,85 @@
     app:cardCornerRadius="12dp"
     app:cardElevation="4dp">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/txtExpenseTitle"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:text="Dinner" />
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtExpenseCategory"
+            <TextView
+                android:id="@+id/txtExpenseTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Dinner" />
+
+            <TextView
+                android:id="@+id/txtExpenseCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/grey"
+                android:textSize="14sp"
+                android:text="Food" />
+
+            <TextView
+                android:id="@+id/txtExpenseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+                android:text="2025-06-01" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtExpenseTitle"
-            android:layout_marginTop="4dp"
-            android:textColor="@color/grey"
-            android:textSize="14sp"
-            android:text="Food" />
+            android:layout_height="match_parent"
+            android:gravity="end|center_vertical"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtExpenseDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtExpenseCategory"
-            android:layout_marginTop="2dp"
-            android:textColor="@color/grey"
-            android:textSize="12sp"
-            android:text="2025-06-01" />
+            <TextView
+                android:id="@+id/txtExpenseAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="$22.00" />
 
-        <TextView
-            android:id="@+id/txtExpenseAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:text="$22.00" />
+            <LinearLayout
+                android:id="@+id/layoutActions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
 
-    </RelativeLayout>
+                <ImageButton
+                    android:id="@+id/btnEditExpense"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_menu_edit"
+                    app:tint="@color/profile_primary_button" />
+
+                <ImageButton
+                    android:id="@+id/btnDeleteExpense"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_menu_delete"
+                    app:tint="@color/profile_danger_button" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

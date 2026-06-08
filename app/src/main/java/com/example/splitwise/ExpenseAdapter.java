@@ -3,6 +3,7 @@ package com.example.splitwise;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,9 +13,20 @@ import java.util.Locale;
 public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder> {
 
     private List<Expense> expenseList;
+    private OnExpenseActionListener listener;
+
+    public interface OnExpenseActionListener {
+        void onEdit(Expense expense);
+        void onDelete(Expense expense);
+    }
 
     public ExpenseAdapter(List<Expense> expenseList) {
+        this(expenseList, null);
+    }
+
+    public ExpenseAdapter(List<Expense> expenseList, OnExpenseActionListener listener) {
         this.expenseList = expenseList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -31,6 +43,14 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseV
         holder.txtCategory.setText(expense.getCategory());
         holder.txtDate.setText(expense.getDate());
         holder.txtAmount.setText(String.format(Locale.getDefault(), "$%.2f", expense.getAmount()));
+
+        if (listener != null) {
+            holder.btnEdit.setOnClickListener(v -> listener.onEdit(expense));
+            holder.btnDelete.setOnClickListener(v -> listener.onDelete(expense));
+            holder.layoutActions.setVisibility(View.VISIBLE);
+        } else {
+            holder.layoutActions.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -40,6 +60,8 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseV
 
     static class ExpenseViewHolder extends RecyclerView.ViewHolder {
         TextView txtTitle, txtCategory, txtDate, txtAmount;
+        ImageButton btnEdit, btnDelete;
+        View layoutActions;
 
         public ExpenseViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -47,6 +69,9 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseV
             txtCategory = itemView.findViewById(R.id.txtExpenseCategory);
             txtDate = itemView.findViewById(R.id.txtExpenseDate);
             txtAmount = itemView.findViewById(R.id.txtExpenseAmount);
+            btnEdit = itemView.findViewById(R.id.btnEditExpense);
+            btnDelete = itemView.findViewById(R.id.btnDeleteExpense);
+            layoutActions = itemView.findViewById(R.id.layoutActions);
         }
     }
 }
