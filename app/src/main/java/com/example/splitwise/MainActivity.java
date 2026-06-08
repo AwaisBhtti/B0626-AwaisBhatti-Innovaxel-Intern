@@ -19,18 +19,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        titleAnim= AnimationUtils.loadAnimation(this,R.anim.title_anim);
-        title=findViewById(R.id.txtTitle);
+        titleAnim = AnimationUtils.loadAnimation(this, R.anim.title_anim);
+        title = findViewById(R.id.txtTitle);
         title.startAnimation(titleAnim);
+        
         new Handler().postDelayed(() -> {
             FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
             if (currentUser != null) {
-                startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                // If logged in, go to HomeActivity
+                startActivity(new Intent(this, HomeActivity.class));
             } else {
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                finish();
+                // If not logged in, go to LoginActivity
+                startActivity(new Intent(this, LoginActivity.class));
             }
+            finish();
         }, 2000);
     }
 }
